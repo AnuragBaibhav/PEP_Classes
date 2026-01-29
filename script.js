@@ -19,3 +19,16 @@ fetch('https://dummyjson.com/products')
     });
   })
   .catch(err => console.log(err));
+
+/////////////////////////////////////////////////////////////Search feature//////////////////////////////////////////
+const btn = document.getElementById('btn');
+const searchInput = document.getElementById('searchInput');
+
+btn.addEventListener('click', () => {
+  const query = searchInput.value.trim();
+  if (!query) return;
+
+  //redirect with query params
+  window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+  searchInput.value = '';
+});
