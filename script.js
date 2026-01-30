@@ -16,8 +16,18 @@ fetch('https://dummyjson.com/products')
           `;
 
       container.appendChild(card);
+      const query = product.id;
       card.addEventListener('click', () => {
         console.log('Card Clicked', product.id);
+        //-----------------ViewHistory
+        let history = JSON.parse(localStorage.getItem('viewHistory')) || [];
+        if (!history.some(item => item.query === query)) {
+          history.push({
+            query: query,
+            time: Date.now(),
+          });
+          localStorage.setItem('viewHistory', JSON.stringify(history));
+        }
         window.location.href = `product.html?id=${product.id}`;
       });
     });
