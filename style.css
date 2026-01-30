@@ -38,3 +38,28 @@ h1 {
   font-weight: bold;
   font-size: 18px;
 }
+.history-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.history-item:hover {
+  background-color: #f0f0f0;
+}
+
+.history-text {
+  font-weight: bold;
+  color: #333;
+}
